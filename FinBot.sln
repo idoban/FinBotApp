@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinBot", "ReSharperTnT\FinBot.csproj", "{3E6EDD42-3B5D-4F12-9FC6-0D6C1A3D8DFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinBot", "FinBot\FinBot.csproj", "{3E6EDD42-3B5D-4F12-9FC6-0D6C1A3D8DFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinBot.Tests", "ReSharperTnT.Tests\FinBot.Tests.csproj", "{581C012D-5FC9-4186-848D-6FC438DB95AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinBot.Tests", "FinBot.Tests\FinBot.Tests.csproj", "{581C012D-5FC9-4186-848D-6FC438DB95AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8FEF9859-FFB2-4B29-8476-39E1BBC43A9C}"
 	ProjectSection(SolutionItems) = preProject
