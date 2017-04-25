@@ -1,15 +1,34 @@
-using System;
-using FinBot.Models;
+using System.IO;
+using Syn.Bot.Siml;
+using BotResponse = FinBot.Models.BotResponse;
 
 namespace FinBot.Engine
 {
+    public interface IBotResponseGenerator
+    {
+        BotResponse GetBotResponse(string input);
+    }
+
     public class BotResponseGenerator : IBotResponseGenerator
     {
+        private readonly SimlBot _simlBot;
+
+        public BotResponseGenerator(IAdaptersRepository adaptersRepository)
+        {
+            _simlBot = new SimlBot();
+            _simlBot.PackageManager.LoadFromString(
+                File.ReadAllText(@"C:\work\github\automated-live-chat-demo\Assistant\Package1.txt"));
+            _simlBot.Adapters.AddRange(adaptersRepository.GetAdapters());
+            ;
+        }
+
         public BotResponse GetBotResponse(string input)
         {
+            var chatResult = _simlBot.Chat(input);
+
             return new BotResponse
             {
-                ResponseText = string.Format("You said: {0}", input)
+                ResponseText = chatResult.BotMessage
             };
         }
     }

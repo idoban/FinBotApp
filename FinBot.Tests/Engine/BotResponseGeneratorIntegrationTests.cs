@@ -14,7 +14,7 @@ namespace FinBot.Tests.Engine
             var botResponseGenerator = bootstrapper.Get<IBotResponseGenerator>();
             var botResponse = botResponseGenerator.GetBotResponse("hello");
 
-            botResponse.ResponseText.Should().Be("You said: hello");
+            botResponse.ResponseText.Should().Be("Hello! What's your name?");
         }
     }
 }
