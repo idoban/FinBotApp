@@ -1,4 +1,4 @@
 # FinBot
 
 Usage:
-http://finbotapp.apphb.com/api/bot?input=hello
+http://finchat.apphb.com/api/bot?input=hello
