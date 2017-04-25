@@ -68,7 +68,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ReSharperTnT\FinBot.csproj">
+    <ProjectReference Include="..\FinBot\FinBot.csproj">
       <Project>{3E6EDD42-3B5D-4F12-9FC6-0D6C1A3D8DFC}</Project>
       <Name>FinBot</Name>
     </ProjectReference>
