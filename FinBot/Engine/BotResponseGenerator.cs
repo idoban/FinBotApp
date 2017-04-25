@@ -17,7 +17,6 @@ namespace FinBot.Engine
             _simlBot = new SimlBot();
             _simlBot.PackageManager.LoadFromString(simlPackageLoader.LoadSimlPackage());
             _simlBot.Adapters.AddRange(adaptersRepository.GetAdapters());
-            ;
         }
 
         public BotResponse GetBotResponse(string input)

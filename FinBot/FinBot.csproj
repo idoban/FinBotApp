@@ -123,6 +123,8 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Engine\BalanceAdapter.cs" />
+    <Compile Include="Engine\BaseAdapter.cs" />
     <Compile Include="Engine\BotResponseGenerator.cs" />
     <Compile Include="Engine\AdaptersRepository.cs" />
     <Compile Include="Engine\SimlPackageLoader.cs" />
