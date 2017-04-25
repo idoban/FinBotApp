@@ -1,3 +1,4 @@
+using System;
 using FinBot.Models;
 
 namespace FinBot.Engine
@@ -8,7 +9,7 @@ namespace FinBot.Engine
         {
             return new BotResponse
             {
-                ResponseText = $"You said: {input}"
+                ResponseText = string.Format("You said: {0}", input)
             };
         }
     }
