@@ -1,4 +1,3 @@
-using System.IO;
 using Syn.Bot.Siml;
 using BotResponse = FinBot.Models.BotResponse;
 
@@ -13,11 +12,10 @@ namespace FinBot.Engine
     {
         private readonly SimlBot _simlBot;
 
-        public BotResponseGenerator(IAdaptersRepository adaptersRepository)
+        public BotResponseGenerator(IAdaptersRepository adaptersRepository, ISimlPackageLoader simlPackageLoader)
         {
             _simlBot = new SimlBot();
-            _simlBot.PackageManager.LoadFromString(
-                File.ReadAllText(@"C:\work\github\automated-live-chat-demo\Assistant\Package1.txt"));
+            _simlBot.PackageManager.LoadFromString(simlPackageLoader.LoadSimlPackage());
             _simlBot.Adapters.AddRange(adaptersRepository.GetAdapters());
             ;
         }
