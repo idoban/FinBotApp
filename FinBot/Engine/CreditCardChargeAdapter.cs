@@ -14,7 +14,7 @@ namespace FinBot.Engine
 
         public override string Evaluate(Context context)
         {
-            return string.Format("Your upcoming credit card charge is {0} dollars.", _financialServices.GetUpcomingCreditCardChargeDate());
+            return string.Format("Your upcoming credit card charge is {0} dollars.", _financialServices.GetUpcomingCreditCardChargeAmount());
         }
     }
 }

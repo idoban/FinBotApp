@@ -1,4 +1,5 @@
-﻿using FinBot.Engine;
+﻿using System;
+using FinBot.Engine;
 using FluentAssertions;
 using NUnit.Framework;
 
@@ -31,7 +32,29 @@ namespace FinBot.Tests.Engine
         {
             var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());
 
-            AssertResponse(botResponseGenerator, "WHAT IS MY UPCOMING CREDIT CARD CHARGE", "Your upcoming credit card charge is 100 dollars.");
+            AssertResponse(botResponseGenerator, 
+                "WHAT IS MY UPCOMING CREDIT CARD CHARGE", 
+                "Your upcoming credit card charge is 100 dollars.");
+        }
+
+        [Test]
+        public void GetBotResponse_UpcomingCreditCardChangeDate()
+        {
+            var botResponseGenerator = InitializeBotResponseGenerator(
+                new MockFinancialServices(), 
+                new MockDateTimeProvider(new DateTime(2017, 6, 1)));
+
+            AssertResponse(botResponseGenerator, 
+                "WHEN MY CREDIT CARD WILL BE CHARGED",
+                "Your credit card will be charged in 9 days");
+        }
+
+        [Test]
+        public void GetBotResponse_Balance()
+        {
+            var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());
+
+            AssertResponse(botResponseGenerator, "What is my balance", "Your balance is 200 dollars");
         }
 
         private static void AssertResponse(IBotResponseGenerator botResponseGenerator, string input, string response)

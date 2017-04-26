@@ -1,12 +1,23 @@
-﻿using FinBot.Engine;
+﻿using System;
+using FinBot.Engine;
 
 namespace FinBot.Tests.Engine
 {
     public class MockFinancialServices : IFinancialServices
     {
-        public decimal GetUpcomingCreditCardChargeDate()
+        public decimal GetUpcomingCreditCardChargeAmount()
         {
             return 100;
+        }
+
+        public decimal GetBalance()
+        {
+            return 200;
+        }
+
+        public DateTime GetUpcomingCreditCardChargeDate()
+        {
+            return new DateTime(2017, 6, 10);
         }
     }
 }
