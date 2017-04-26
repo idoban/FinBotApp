@@ -16,7 +16,7 @@ namespace FinBot.Engine
             {
                 return "Please tell me your bank account passowrd";
             }
-            return $"Your balance is ${new Random().Next(10000, 50000)}";
+            return string.Format("Your balance is ${0}", new Random().Next(10000, 50000));
         }
     }
 }

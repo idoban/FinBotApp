@@ -8,7 +8,10 @@ namespace FinBot.Engine
     {
         public bool IsRecursive => true;
 
-        private string Name => GetType().Name.Replace("Adapter", string.Empty);
+        private string Name
+        {
+            get { return GetType().Name.Replace("Adapter", string.Empty); }
+        }
 
         public XName TagName
         {
