@@ -74,9 +74,7 @@
       <Pattern>
         <Item>HOW MANY PAYMENTS DO I HAVE TO PAY FOR *</Item>
       </Pattern>
-      <Response>
-        <easybudget:PaymentsAmount><Match /></easybudget:PaymentsAmount>
-      </Response>
+      <Response>You have <easybudget:PaymentsAmount><Match /></easybudget:PaymentsAmount> remaining payments for <Match /></Response>
     </Model>
     
   </Concept>
