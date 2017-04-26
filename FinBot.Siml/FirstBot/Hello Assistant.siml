@@ -14,7 +14,7 @@
     </Model>
     
     <Model>
-      <Pattern>MY NAME IS *</Pattern>
+      <Pattern>{MY NAME IS} *</Pattern>
       <Response>Alright I will remember your name <User Set="NAME"><Match /></User></Response>
     </Model>
     
@@ -27,10 +27,8 @@
   <Concept Name="Balance" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
     
     <Model>
-      <Pattern>WHAT IS MY BALANCE</Pattern>
-      <Response>
-        <easybudget:Balance>Run</easybudget:Balance>
-      </Response>
+      <Pattern>WHAT IS MY TOTAL BALANCE</Pattern>
+      <Response>Your total balance is <easybudget:Balance></easybudget:Balance></Response>
     </Model>
     
   </Concept>
@@ -38,9 +36,7 @@
     
     <Model>
       <Pattern>WHAT IS MY UPCOMING CREDIT CARD CHARGE</Pattern>
-      <Response>
-        <easybudget:CreditCardCharge>Run</easybudget:CreditCardCharge>
-      </Response>
+      <Response>Your upcoming credit card charge is <easybudget:CreditCardCharge></easybudget:CreditCardCharge></Response>
     </Model>
     
   </Concept>
@@ -48,9 +44,7 @@
     
     <Model>
       <Pattern>WHEN MY CREDIT CARD WILL BE CHARGED</Pattern>
-      <Response>
-        <easybudget:CreditCardChangeDate>Run</easybudget:CreditCardChangeDate>
-      </Response>
+      <Response>Your credit card will be charged in <easybudget:CreditCardChangeDate></easybudget:CreditCardChangeDate></Response>
     </Model>
     
   </Concept>
@@ -63,7 +57,8 @@
         <Item>HAVE I RECEIVED SALARY</Item>
       </Pattern>
       <Response>
-        <easybudget:Payslip>Run</easybudget:Payslip>
+        <If User="receivedPayslip" Value="true">Yes, you already received your payslip</If>
+        <ElseIf User="receivedPayslip" Value="false">No, you haven't received your payslip</ElseIf>
       </Response>
     </Model>
     

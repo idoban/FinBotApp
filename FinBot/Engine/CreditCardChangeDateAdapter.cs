@@ -18,7 +18,7 @@ namespace FinBot.Engine
         {
             var cardChargeDate = _financialServices.GetUpcomingCreditCardChargeDate();
             var timeSpan = cardChargeDate.Subtract(_dateTimeProvider.UtcNow.Date);
-            return string.Format("Your credit card will be charged in {0}", timeSpan.ToReadableString());
+            return timeSpan.ToReadableString();
         }
     }
 }

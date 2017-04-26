@@ -131,6 +131,7 @@
     <Compile Include="Engine\DateTimeExtensions.cs" />
     <Compile Include="Engine\FinancialServices.cs" />
     <Compile Include="Engine\IDateTimeProvider.cs" />
+    <Compile Include="Engine\InputNormalizer.cs" />
     <Compile Include="Engine\PaymentsAmountAdapter.cs" />
     <Compile Include="Engine\PayslipAdapter.cs" />
     <Compile Include="Engine\SimlPackageLoader.cs" />

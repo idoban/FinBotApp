@@ -18,6 +18,14 @@ namespace FinBot.Tests.Engine
         }
 
         [Test]
+        public void GetBotResponse_UrlEncodedInput()
+        {
+            var botResponseGenerator = InitializeBotResponseGenerator();
+
+            AssertResponse(botResponseGenerator, "\u202Bmy name is Chuck", "Alright I will remember your name Chuck");
+        }
+
+        [Test]
         public void GetBotResponse_IntroductionConversation_BotShouldRemember()
         {
             var botResponseGenerator = InitializeBotResponseGenerator();
@@ -33,10 +41,11 @@ namespace FinBot.Tests.Engine
             var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());
 
             AssertResponse(botResponseGenerator, 
-                "WHAT IS MY UPCOMING CREDIT CARD CHARGE", 
-                "Your upcoming credit card charge is 100 dollars.");
+                "WHAT IS MY UPCOMING CREDIT CARD CHARGE",
+                "Your upcoming credit card charge is 100");
         }
         [Test]
+        [Ignore]
         public void GetBotResponse_Payslip()
         {
             var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());
@@ -72,7 +81,7 @@ namespace FinBot.Tests.Engine
         {
             var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());
 
-            AssertResponse(botResponseGenerator, "What is my balance", "Your balance is 200 dollars");
+            AssertResponse(botResponseGenerator, "What is my total balance", "Your total balance is 200");
         }
 
         private static void AssertResponse(IBotResponseGenerator botResponseGenerator, string input, string response)

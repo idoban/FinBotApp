@@ -4,7 +4,7 @@ namespace FinBot.Engine
     public interface IFinancialServices
     {
         decimal GetUpcomingCreditCardChargeAmount();
-        decimal GetBalance();
+        decimal GetTotalBalance();
         DateTime GetUpcomingCreditCardChargeDate();
         bool PayslipReceived();
         int GetRemainingPayments(string productName);
@@ -19,7 +19,7 @@ namespace FinBot.Engine
             return _random.Next(10000, 50000);
         }
 
-        public decimal GetBalance()
+        public decimal GetTotalBalance()
         {
             return _random.Next(10000, 50000);
         }

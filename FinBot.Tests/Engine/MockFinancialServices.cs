@@ -10,7 +10,7 @@ namespace FinBot.Tests.Engine
             return 100;
         }
 
-        public decimal GetBalance()
+        public decimal GetTotalBalance()
         {
             return 200;
         }

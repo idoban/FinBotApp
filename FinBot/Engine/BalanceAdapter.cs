@@ -13,8 +13,7 @@ namespace FinBot.Engine
 
         public override string Evaluate(Context context)
         {
-            var balance = _financialServices.GetBalance();
-            return string.Format("Your balance is {0} dollars", balance);
+            return _financialServices.GetTotalBalance().ToString();
         }
     }
 }

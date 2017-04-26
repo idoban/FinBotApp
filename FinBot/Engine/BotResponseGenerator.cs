@@ -11,9 +11,11 @@ namespace FinBot.Engine
     public class BotResponseGenerator : IBotResponseGenerator
     {
         private readonly SimlBot _simlBot;
+        private readonly IInputNormalizer _inputNormalizer;
 
-        public BotResponseGenerator(IAdaptersRepository adaptersRepository, ISimlPackageLoader simlPackageLoader)
+        public BotResponseGenerator(IAdaptersRepository adaptersRepository, ISimlPackageLoader simlPackageLoader, IInputNormalizer inputNormalizer)
         {
+            _inputNormalizer = inputNormalizer;
             _simlBot = new SimlBot();
             _simlBot.PackageManager.LoadFromString(simlPackageLoader.LoadSimlPackage());
             _simlBot.Adapters.AddRange(adaptersRepository.GetAdapters());
@@ -21,7 +23,8 @@ namespace FinBot.Engine
 
         public BotResponse GetBotResponse(string input)
         {
-            var chatResult = _simlBot.Chat(input);
+            var normalizedInput = _inputNormalizer.Normalize(input);
+            var chatResult = _simlBot.Chat(normalizedInput);
 
             return new BotResponse
             {
