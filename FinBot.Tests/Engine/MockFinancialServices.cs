@@ -19,5 +19,15 @@ namespace FinBot.Tests.Engine
         {
             return new DateTime(2017, 6, 10);
         }
+
+        public bool PayslipReceived()
+        {
+            return true;
+        }
+
+        public int GetRemainingPayments(string productName)
+        {
+            return 6;
+        }
     }
 }

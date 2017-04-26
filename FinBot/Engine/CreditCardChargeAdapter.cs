@@ -1,5 +1,4 @@
-﻿using System;
-using Syn.Bot.Siml;
+﻿using Syn.Bot.Siml;
 
 namespace FinBot.Engine
 {

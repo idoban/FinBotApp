@@ -36,6 +36,24 @@ namespace FinBot.Tests.Engine
                 "WHAT IS MY UPCOMING CREDIT CARD CHARGE", 
                 "Your upcoming credit card charge is 100 dollars.");
         }
+        [Test]
+        public void GetBotResponse_Payslip()
+        {
+            var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());
+
+            AssertResponse(botResponseGenerator,
+                "HAVE I RECEIVED MY PAYSLIP",
+                "Yes, you already received your payslip");
+        }
+        [Test]
+        public void GetBotResponse_Payments()
+        {
+            var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());
+
+            AssertResponse(botResponseGenerator,
+                "HOW MANY PAYMENTS DO I HAVE TO PAY FOR car",
+                "You have 6 remaining payments for car");
+        }
 
         [Test]
         public void GetBotResponse_UpcomingCreditCardChangeDate()
