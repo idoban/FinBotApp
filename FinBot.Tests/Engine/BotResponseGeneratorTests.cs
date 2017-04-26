@@ -45,14 +45,13 @@ namespace FinBot.Tests.Engine
                 "Your upcoming credit card charge is 100");
         }
         [Test]
-        [Ignore]
         public void GetBotResponse_Payslip()
         {
             var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());
 
             AssertResponse(botResponseGenerator,
                 "HAVE I RECEIVED MY PAYSLIP",
-                "Yes, you already received your payslip");
+                "Yes");
         }
         [Test]
         public void GetBotResponse_Payments()

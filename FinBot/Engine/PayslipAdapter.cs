@@ -14,11 +14,7 @@ namespace FinBot.Engine
         public override string Evaluate(Context context)
         {
             var payslipReceived = _financialServices.PayslipReceived();
-            if (payslipReceived)
-            {
-                return "Yes, you already received your payslip";
-            }
-            return "No, you haven't received your payslip";
+            return payslipReceived ? "Yes" : "No";
         }
     }
 }

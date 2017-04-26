@@ -56,10 +56,7 @@
         <Item>HAVE I RECEIVED PAYCHECK</Item>
         <Item>HAVE I RECEIVED SALARY</Item>
       </Pattern>
-      <Response>
-        <If User="receivedPayslip" Value="true">Yes, you already received your payslip</If>
-        <ElseIf User="receivedPayslip" Value="false">No, you haven't received your payslip</ElseIf>
-      </Response>
+      <Response><easybudget:Payslip></easybudget:Payslip></Response>
     </Model>
     
   </Concept>
