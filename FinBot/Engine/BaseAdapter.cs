@@ -6,7 +6,10 @@ namespace FinBot.Engine
 {
     public abstract class BaseAdapter : IAdapter
     {
-        public bool IsRecursive => true;
+        public bool IsRecursive
+        {
+            get { return true; }
+        }
 
         private string Name
         {
