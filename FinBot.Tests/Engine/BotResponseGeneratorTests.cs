@@ -17,15 +17,6 @@ namespace FinBot.Tests.Engine
         }
 
         [Test]
-        public void GetBotResponse_Balance()
-        {
-            var botResponseGenerator = InitializeBotResponseGenerator();
-            var botResponse = botResponseGenerator.GetBotResponse("MY BALANCE");
-
-            botResponse.ResponseText.Should().Be("Please tell me your bank account number");
-        }
-
-        [Test]
         public void GetBotResponse_IntroductionConversation_BotShouldRemember()
         {
             var botResponseGenerator = InitializeBotResponseGenerator();
@@ -35,15 +26,23 @@ namespace FinBot.Tests.Engine
             AssertResponse(botResponseGenerator, "What is my name?", "Your name is Chuck");
         }
 
+        [Test]
+        public void GetBotResponse_UpcomingCreditCardChargeAmount()
+        {
+            var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());
+
+            AssertResponse(botResponseGenerator, "WHAT IS MY UPCOMING CREDIT CARD CHARGE", "Your upcoming credit card charge is 100 dollars.");
+        }
+
         private static void AssertResponse(IBotResponseGenerator botResponseGenerator, string input, string response)
         {
             var botResponse = botResponseGenerator.GetBotResponse(input);
             botResponse.ResponseText.Should().Be(response);
         }
 
-        private static IBotResponseGenerator InitializeBotResponseGenerator()
+        private static IBotResponseGenerator InitializeBotResponseGenerator(params object[] instances)
         {
-            var bootstrapper = new Bootstrapper();
+            var bootstrapper = new Bootstrapper(instances);
             var botResponseGenerator = bootstrapper.Get<IBotResponseGenerator>();
             return botResponseGenerator;
         }

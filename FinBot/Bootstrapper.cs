@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Linq;
+using System.Reflection;
 using Autofac;
 using Autofac.Integration.WebApi;
 
@@ -8,7 +9,7 @@ namespace FinBot
     {
         private readonly IContainer _container;
 
-        public Bootstrapper()
+        public Bootstrapper(params object[] instances)
         {
             ContainerBuilder builder = new ContainerBuilder();
 
@@ -17,6 +18,15 @@ namespace FinBot
             builder.RegisterAssemblyTypes(typeof (Bootstrapper).Assembly)
                 .AsImplementedInterfaces()
                 .SingleInstance();
+
+            if (instances != null && instances.Any())
+            {
+                foreach (var instance in instances)
+                {
+                    builder.RegisterInstance(instance)
+                        .AsImplementedInterfaces();
+                }
+            }
 
             _container = builder.Build();
         }

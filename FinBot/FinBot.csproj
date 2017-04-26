@@ -126,6 +126,8 @@
     <Compile Include="Engine\BaseAdapter.cs" />
     <Compile Include="Engine\BotResponseGenerator.cs" />
     <Compile Include="Engine\AdaptersRepository.cs" />
+    <Compile Include="Engine\CreditCardChargeAdapter.cs" />
+    <Compile Include="Engine\FinancialServices.cs" />
     <Compile Include="Engine\SimlPackageLoader.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
