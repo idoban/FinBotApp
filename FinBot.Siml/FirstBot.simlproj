@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<simlproject>
+  <name>Test1</name>
+  <directory>FirstBot</directory>
+  <botname>Atomic</botname>
+  <personality>Passive Agressive</personality>
+  <author>Boris</author>
+  <description>sssss</description>
+  <date>15:00:15, יום שלישי 11 אפריל 2017</date>
+  <notes></notes>
+</simlproject>

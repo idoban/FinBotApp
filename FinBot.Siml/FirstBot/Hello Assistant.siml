@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Siml>
+  <!--Entry point for creating your Syn Web Assistant-->
+  <!--Note: You should NOT add any template to this Project. If you wish to use a base Template you should select the Template from you Syn Account.-->
+  <Concept Name="Introduction">
+    
+    <Model>
+      <Pattern>
+        <Item>HI</Item>
+        <Item>HELLO</Item>
+        <Item>HEY</Item>
+      </Pattern>
+      <Response>Hello! What's your name?</Response>
+    </Model>
+    
+    <Model>
+      <Pattern>MY NAME IS *</Pattern>
+      <Response>Alright I will remember your name <User Set="NAME"><Match /></User></Response>
+    </Model>
+    
+    <Model>
+      <Pattern>WHAT IS MY NAME</Pattern>
+      <Response>Your name is <User Get="NAME" /></Response>
+    </Model>
+    
+  </Concept>
+  <Concept Name="Learning">
+    
+    <Model>
+      <Pattern>
+        <Item>WHAT IS A *</Item>
+        <Item>WHAT IS AN *</Item>
+        <Item>WHAT IS *</Item>
+      </Pattern>
+      <Response>What do you think a <Match /> is?</Response>
+    </Model>
+    
+    <Model>
+      <Pattern>
+        <Item>I THINK A * IS A *</Item>
+        <Item>* IS A *</Item>
+        <Item>I THINK AN * IS A *</Item>
+      </Pattern>
+      <Response>I will remember that <Match /> is <Match Index="1" /></Response>
+    </Model>
+    
+  </Concept>
+  <Concept Name="Balance" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+    
+    <Model>
+      <Pattern>MY BALANCE</Pattern>
+      <Response>
+        <easybudget:Balance>Run</easybudget:Balance>
+      </Response>
+    </Model>
+    
+  </Concept>
+  <Concept Name="Goodbye">
+    
+    <Model>
+      <Pattern>BYE</Pattern>
+      <Response>
+        <Random>
+          <Item>See Ya</Item>
+          <Item>Adios amigo!</Item>
+          <Item>Talk to you later</Item>
+          <Item>Nice talking to you.</Item>
+        </Random>
+      </Response>
+    </Model>
+    
+  </Concept>
+</Siml>

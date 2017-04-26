@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Siml>
+  <!--Note: When referring to a declared set you should enclose the set name within square brackets [EXAMPLE]-->
+  <!--Note: Names of set(s) are case insensitive and are language-independent-->
+  <!--Note: Set names should be Singural by convention-->
+  <!--Note: The English Template option available on your Syn Account has the following in-built templates ( there is no need to re-write them )-->
+  <!--[ABC], [ANIMAL], [ANIMALS], [ARTICLE], [BE], [BEEN], [BEING], [BIRD], [COLOR], [COUNTRY], [DIGIT], [ENTITY], [ERDOWN], [ERUP], [ESTDOWN], [ESTUP],[EVILDOERS], [FAMILIARNAME], [FASTFOOD], [GENDER], [IS], [LANGUAGE], [LETTER], [MODAL], [MONTH], [NAME], [NATION], [NO], [ORDINAL], [PLACE],[PREPOSITION], [PROFILE], [PRONOUN], [QUANTIFIER], [QUANTIFIER], [SPATIALPREP], [SPHERE], [STARSIGN], [STATE], [STATE2], [SWITCH], [WAS], [WEEKDAY], [WET], [WH], [YES]-->
+  <!--To know the values of each set visit http://github.syn.co.in-->
+</Siml>

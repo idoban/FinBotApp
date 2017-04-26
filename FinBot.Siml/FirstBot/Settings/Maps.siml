@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Siml>
+  <!--Map: Transforms a fragment of one set into an element of another-->
+  <!--Note: The English Template available in Syn Account has the following Maps ( there is no need to re-write them )-->
+  <!--BE2BEEN, BE2BEING, BE2IS, BE2WAS, BEEN2BE, BEING2BE, ER2EST, EST2ER, FAMILIARGENDER, FAMILIARPREDICATE, FAMILIARPRONOUN, GENDERMAP, GENDERNAME, IS2BE, NAME2NUMBER, NATION2CAPITAL, NEXT, NUMBER2ORDINAL, OPPOSITE, ORDINAL2NUMBER, PHONETIC, PROFILE2PREDICATE, RHYME, SIGN2DATE, STATE2CAPITAL, STATE2LARGESTCITY, TOMORROW, WAS2BE, GENDER, PERSON, PERSON2-->
+</Siml>

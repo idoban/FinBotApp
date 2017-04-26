@@ -13,7 +13,7 @@ namespace FinBot.Engine
         public string LoadSimlPackage()
         {
             var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "FinBot.Content.SimlPackage.txt";
+            var resourceName = "FinBot.Content.SimlPackage.simlpk";
 
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             using (StreamReader reader = new StreamReader(stream))
