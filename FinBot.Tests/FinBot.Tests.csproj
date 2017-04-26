@@ -59,7 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BootstrapperTests.cs" />
-    <Compile Include="Engine\BotResponseGeneratorIntegrationTests.cs" />
+    <Compile Include="Engine\BotResponseGeneratorTests.cs" />
     <Compile Include="Engine\SimlPackageLoaderTests.cs" />
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

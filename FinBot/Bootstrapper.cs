@@ -15,7 +15,8 @@ namespace FinBot
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
             builder.RegisterAssemblyTypes(typeof (Bootstrapper).Assembly)
-                .AsImplementedInterfaces();
+                .AsImplementedInterfaces()
+                .SingleInstance();
 
             _container = builder.Build();
         }
