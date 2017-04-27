@@ -98,6 +98,16 @@
     </Model>
   </Concept>
   
+   <Concept Name="MonthlyExpenses" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+    <Model>
+      <Pattern>
+        <Item>{WHAT EXPENSES}</Item>
+        <Item>{TELL EXPENSES}</Item>
+      </Pattern>
+      <Response><easybudget:MonthlyExpenses></easybudget:MonthlyExpenses></Response>
+    </Model>
+  </Concept>
+  
   <Concept Name="PaymentsAmount" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
     
     <Model>

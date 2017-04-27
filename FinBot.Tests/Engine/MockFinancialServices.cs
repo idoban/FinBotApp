@@ -44,5 +44,10 @@ namespace FinBot.Tests.Engine
         {
             return 10000;
         }
+
+        public decimal GetMonthlyExpenses()
+        {
+            return 9000;
+        }
     }
 }
