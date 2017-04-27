@@ -14,8 +14,8 @@
     </Model>
     
     <Model>
-      <Pattern>{MY NAME IS} *</Pattern>
-      <Response>Hello <User Set="Name"><Match /></User>. It's nice to meet you. My name is <Bot Get="Name"></Bot> your personal finance ninja</Response>
+      <Pattern>MY NAME IS *</Pattern>
+      <Response>Alright I will remember your name <User Set="NAME"><Match /></User></Response>
     </Model>
     
     <Model>
@@ -27,41 +27,30 @@
   <Concept Name="Balance" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
     
     <Model>
-      <Pattern>
-            <Item>{WHAT IS MY BALANCE}</Item>
-            <Item>{WHAT MY BALANCE IS}</Item>
-       </Pattern>
-      <Response>Your balance is <easybudget:Balance></easybudget:Balance></Response>
-    </Model>
-    
-  </Concept>
-    <Concept Name="CreditBalance" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
-    
-    <Model>
-      <Pattern>
-            <Item>{WHAT IS CREDIT BALANCE}</Item>
-            <Item>{WHAT CREDIT BALANCE IS}</Item>
-            <Item>{REMIND CREDIT BALANCE}</Item>
-       </Pattern>
-      <Response>It's <easybudget:CreditBalance></easybudget:CreditBalance></Response>
+      <Pattern>WHAT IS MY BALANCE</Pattern>
+      <Response>
+        <easybudget:Balance>Run</easybudget:Balance>
+      </Response>
     </Model>
     
   </Concept>
   <Concept Name="CreditCardCharge" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+    
     <Model>
       <Pattern>WHAT IS MY UPCOMING CREDIT CARD CHARGE</Pattern>
-      <Response>Your upcoming credit card charge is <easybudget:CreditCardCharge></easybudget:CreditCardCharge></Response>
+      <Response>
+        <easybudget:CreditCardCharge>Run</easybudget:CreditCardCharge>
+      </Response>
     </Model>
+    
   </Concept>
-
   <Concept Name="CreditCardChangeDate" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+    
     <Model>
-      <Pattern>
-            <Item>{WHEN WILL CREDIT CARD BE CHARGED}</Item>
-            <Item>{WHEN CREDIT CARD WILL BE CHARGED}</Item>
-            <Item>{WHEN NEXT CREDIT CARD BILLING}</Item>
-      </Pattern>
-      <Response>Sure <User Get="Name"></User>, in <easybudget:CreditCardChangeDate></easybudget:CreditCardChangeDate> days! HANG IN THERE!!!</Response>
+      <Pattern>WHEN MY CREDIT CARD WILL BE CHARGED</Pattern>
+      <Response>
+        <easybudget:CreditCardChangeDate>Run</easybudget:CreditCardChangeDate>
+      </Response>
     </Model>
     
   </Concept>
@@ -73,66 +62,24 @@
         <Item>HAVE I RECEIVED PAYCHECK</Item>
         <Item>HAVE I RECEIVED SALARY</Item>
       </Pattern>
-      <Response><easybudget:Payslip></easybudget:Payslip></Response>
-    </Model>  
-  </Concept>
-  
-   <Concept Name="AnnualSalary" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
-    <Model>
-      <Pattern>
-        <Item>{WHAT ANNUAL SALARY}</Item>
-      </Pattern>
-      <Response><easybudget:AnnualSalary><Match /></easybudget:AnnualSalary></Response>
-    </Model>
-  </Concept>
-
-   <Concept Name="MonthlySalary" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
-    <Model>
-      <Pattern>
-        <Item>{WHAT SALARY}</Item>
-        <Item>{TELL INCOME}</Item>
-      </Pattern>
-      <Response><easybudget:MonthlySalary></easybudget:MonthlySalary></Response>
-    </Model>
-  </Concept>
-  
-   <Concept Name="MonthlyExpenses" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
-    <Model>
-      <Pattern>
-        <Item>{WHAT EXPENSES}</Item>
-        <Item>{TELL EXPENSES}</Item>
-      </Pattern>
-      <Response><easybudget:MonthlyExpenses></easybudget:MonthlyExpenses></Response>
-    </Model>
-  </Concept>
-  
-  <Concept Name="PaymentsAmount" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
-    <Model>
-      <Pattern>
-        <Item>HOW MANY PAYMENTS DO I HAVE TO PAY FOR *</Item>
-        <Item>{HOW MANY PAYMENTS ON *}</Item>
-      </Pattern>
-      <Response><easybudget:PaymentsAmount><Match /></easybudget:PaymentsAmount>! Thank God!!!</Response>
+      <Response>
+        <easybudget:Payslip>Run</easybudget:Payslip>
+      </Response>
     </Model>
     
   </Concept>
-
-  <Concept Name="CategoryBudget" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">    
+  <Concept Name="PaymentsAmount" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+    
     <Model>
       <Pattern>
-        <Item>BUDGET FOR * IS *</Item>
+        <Item>HOW MANY PAYMENTS DO I HAVE TO PAY FOR *</Item>
       </Pattern>
-      <Response>I'll remember that.<easybudget:CategoryBudgetSetter><Match /><Text>---</Text><Match Index="2" /></easybudget:CategoryBudgetSetter></Response>
-    </Model>    
-    <Model>
-      <Pattern>
-        <Item>WHAT IS MY BUDGET FOR *</Item>
-      </Pattern>
-      <Response>Your budget for <Match /> is <easybudget:CategoryBudgetGetter><Match /></easybudget:CategoryBudgetGetter></Response>
-    </Model>   
+      <Response>
+        <easybudget:PaymentsAmount>Run</easybudget:PaymentsAmount>
+      </Response>
+    </Model>
+    
   </Concept>
-
-  
   <Concept Name="Goodbye">
     
     <Model>
@@ -152,14 +99,12 @@
   <Concept Name="ExpenseByCategory" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
 	<Model>
 	 <Pattern>
-	 	 <Item>How much on * ?</Item>
-	 	 <Item>How much did i spent on * ?</Item>	 	
-		 <Item>my expense on * is ?</Item>
-		 <Item>my spendings on * was ?</Item>
+	 	 <Item>{HOW MUCH ON *}</Item>
+	 	 <Item>{HOW MUCH DID I SPENT ON *}</Item>	 	
+		 <Item>{MY EXPENSE ON * IS}</Item>
+		 <Item>{MY SPENDINGS ON * WAS}</Item>
 	 </Pattern>
-       <Response>
-        <easybudget:ExpenseByCategory><Match /></easybudget:ExpenseByCategory>
-      </Response>
+       <Response>You spent <easybudget:ExpenseByCategory><Match /></easybudget:ExpenseByCategory> dollars</Response>
 	</Model>    
   </Concept>
 </Siml>
