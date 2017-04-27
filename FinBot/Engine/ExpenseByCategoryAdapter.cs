@@ -21,7 +21,7 @@ namespace FinBot.Engine
         {
             var categoryValue = context.Element.Nodes().OfType<XText>().First().Value;
             var category = ExpenseService.Text2Category(categoryValue);
-            return ExpenseService.GenerateReport(category, Period.Monthly).ToString();
+            return ExpenseService.GenerateReport(category, Period.Monthly).Subtotal.ToString();
         }
     }
 }
