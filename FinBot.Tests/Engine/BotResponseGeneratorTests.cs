@@ -73,7 +73,7 @@ namespace FinBot.Tests.Engine
                 "I'll remember that.");
             AssertResponse(botResponseGenerator,
                 "what is my budget for shoes",
-                "Your budget on shoes is 987");
+                "Your budget for shoes is 987");
         }
 
         [Test]
@@ -83,9 +83,9 @@ namespace FinBot.Tests.Engine
                 new MockFinancialServices(), 
                 new MockDateTimeProvider(new DateTime(2017, 6, 1)));
 
-            AssertResponse(botResponseGenerator, 
-                "WHEN MY CREDIT CARD WILL BE CHARGED",
-                "Your credit card will be charged in 9 days");
+            AssertResponse(botResponseGenerator,
+                "Hey Fin, could you please remind me when will my credit card be charged?",
+                "Sure User, in 9 days days! HANG IN THERE!!!");
         }
 
         [Test]

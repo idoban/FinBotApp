@@ -43,8 +43,11 @@
   <Concept Name="CreditCardChangeDate" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
     
     <Model>
-      <Pattern>WHEN MY CREDIT CARD WILL BE CHARGED</Pattern>
-      <Response>Your credit card will be charged in <easybudget:CreditCardChangeDate></easybudget:CreditCardChangeDate></Response>
+      <Pattern>
+            <Item>{WHEN WILL CREDIT CARD BE CHARGED}</Item>
+            <Item>{WHEN CREDIT CARD WILL BE CHARGED}</Item>
+      </Pattern>
+      <Response>Sure <User Get="Name"></User>, in <easybudget:CreditCardChangeDate></easybudget:CreditCardChangeDate> days! HANG IN THERE!!!</Response>
     </Model>
     
   </Concept>
@@ -82,7 +85,7 @@
       <Pattern>
         <Item>WHAT IS MY BUDGET FOR *</Item>
       </Pattern>
-      <Response>Your budget on <Match /> is <easybudget:CategoryBudgetGetter><Match /></easybudget:CategoryBudgetGetter></Response>
+      <Response>Your budget for <Match /> is <easybudget:CategoryBudgetGetter><Match /></easybudget:CategoryBudgetGetter></Response>
     </Model>   
   </Concept>
 
