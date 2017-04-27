@@ -96,6 +96,16 @@ namespace FinBot.Tests.Engine
             AssertResponse(botResponseGenerator, "What is my balance", "Your balance is 200");
         }
 
+        [Test]
+        public void GetBotResponse_Balance_LongQuestion()
+        {
+            var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());
+
+            AssertResponse(botResponseGenerator, 
+                "Could you please tell me what my balance is?", 
+                "Your balance is 200");
+        }
+
         private static void AssertResponse(IBotResponseGenerator botResponseGenerator, string input, string response)
         {
             var botResponse = botResponseGenerator.GetBotResponse(input);

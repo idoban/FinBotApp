@@ -27,7 +27,10 @@
   <Concept Name="Balance" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
     
     <Model>
-      <Pattern>WHAT IS MY BALANCE</Pattern>
+      <Pattern>
+            <Item>{WHAT IS MY BALANCE}</Item>
+            <Item>{WHAT MY BALANCE IS}</Item>
+       </Pattern>
       <Response>Your balance is <easybudget:Balance></easybudget:Balance></Response>
     </Model>
     
