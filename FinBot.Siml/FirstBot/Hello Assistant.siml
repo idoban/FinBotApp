@@ -92,6 +92,7 @@
     <Model>
       <Pattern>
         <Item>{WHAT SALARY}</Item>
+        <Item>{TELL INCOME}</Item>
       </Pattern>
       <Response><easybudget:MonthlySalary></easybudget:MonthlySalary></Response>
     </Model>
