@@ -10,6 +10,7 @@ namespace FinBot.Engine
         int GetRemainingPayments(string productName);
         decimal GetCreditCardBalance();
         decimal GetAnnualSalary();
+        decimal GetMonthlySalary();
     }
 
     public class FinancialServices : IFinancialServices
@@ -49,6 +50,11 @@ namespace FinBot.Engine
         public decimal GetAnnualSalary()
         {
             return _random.Next(10, 20) * 10000;
+        }
+
+        public decimal GetMonthlySalary()
+        {
+            return _random.Next(10, 20) * 1000;
         }
     }
 }

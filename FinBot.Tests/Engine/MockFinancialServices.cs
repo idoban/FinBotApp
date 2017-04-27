@@ -39,5 +39,10 @@ namespace FinBot.Tests.Engine
         {
             return 170000;
         }
+
+        public decimal GetMonthlySalary()
+        {
+            return 10000;
+        }
     }
 }
