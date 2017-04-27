@@ -127,18 +127,29 @@
     <Compile Include="Engine\BotResponseGenerator.cs" />
     <Compile Include="Engine\AdaptersRepository.cs" />
     <Compile Include="Engine\CreditCardChargeAdapter.cs" />
+    <Compile Include="Engine\ExpenseByCategoryAdapter.cs" />
     <Compile Include="Engine\FinancialServices.cs" />
     <Compile Include="Engine\SimlPackageLoader.cs" />
+    <Compile Include="Expenses\Category.cs" />
+    <Compile Include="Expenses\DefaultCategoriesLoader.cs" />
+    <Compile Include="Expenses\Expense.cs" />
+    <Compile Include="Expenses\ExpenseReport.cs" />
+    <Compile Include="Expenses\Period.cs" />
+    <Compile Include="Expenses\ICategoriesLoader.cs" />
+    <Compile Include="Expenses\IExpenseService.cs" />
+    <Compile Include="Expenses\IRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\BotResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\BotController.cs" />
+    <Compile Include="Expenses\ExpenseService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <EmbeddedResource Include="Content\SimlPackage.simlpk" />
+    <EmbeddedResource Include="Content\ExpenseCategories.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

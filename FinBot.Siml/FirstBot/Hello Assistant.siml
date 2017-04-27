@@ -3,6 +3,7 @@
   <!--Entry point for creating your Syn Web Assistant-->
   <!--Note: You should NOT add any template to this Project. If you wish to use a base Template you should select the Template from you Syn Account.-->
   <Concept Name="Introduction">
+    
     <Model>
       <Pattern>
         <Item>HI</Item>
@@ -21,61 +22,66 @@
       <Pattern>WHAT IS MY NAME</Pattern>
       <Response>Your name is <User Get="NAME" /></Response>
     </Model>
+    
   </Concept>
-  
   <Concept Name="Balance" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+    
     <Model>
       <Pattern>WHAT IS MY BALANCE</Pattern>
       <Response>
         <easybudget:Balance>Run</easybudget:Balance>
       </Response>
     </Model>
+    
   </Concept>
-  
   <Concept Name="CreditCardCharge" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+    
     <Model>
       <Pattern>WHAT IS MY UPCOMING CREDIT CARD CHARGE</Pattern>
       <Response>
         <easybudget:CreditCardCharge>Run</easybudget:CreditCardCharge>
       </Response>
     </Model>
+    
   </Concept>
-
   <Concept Name="CreditCardChangeDate" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+    
     <Model>
       <Pattern>WHEN MY CREDIT CARD WILL BE CHARGED</Pattern>
       <Response>
         <easybudget:CreditCardChangeDate>Run</easybudget:CreditCardChangeDate>
       </Response>
     </Model>
+    
   </Concept>
-
   <Concept Name="Payslip" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+    
     <Model>
       <Pattern>
-            <Item>HAVE I RECEIVED MY PAYSLIP</Item>
-            <Item>HAVE I RECEIVED PAYCHECK</Item>
-            <Item>HAVE I RECEIVED SALARY</Item>
-       </Pattern>
+        <Item>HAVE I RECEIVED MY PAYSLIP</Item>
+        <Item>HAVE I RECEIVED PAYCHECK</Item>
+        <Item>HAVE I RECEIVED SALARY</Item>
+      </Pattern>
       <Response>
         <easybudget:Payslip>Run</easybudget:Payslip>
       </Response>
     </Model>
+    
   </Concept>
-
   <Concept Name="PaymentsAmount" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+    
     <Model>
       <Pattern>
-            <Item>HOW MANY PAYMENTS DO I HAVE TO PAY FOR *</Item>
-       </Pattern>
+        <Item>HOW MANY PAYMENTS DO I HAVE TO PAY FOR *</Item>
+      </Pattern>
       <Response>
         <easybudget:PaymentsAmount>Run</easybudget:PaymentsAmount>
       </Response>
     </Model>
+    
   </Concept>
-
-
   <Concept Name="Goodbye">
+    
     <Model>
       <Pattern>BYE</Pattern>
       <Response>
@@ -88,5 +94,19 @@
       </Response>
     </Model>
     
+  </Concept>
+  
+  <Concept Name="ExpenseByCategory" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+	<Model>
+	 <Pattern>
+	 	 <Item>How much on * ?</Item>
+	 	 <Item>How much did i spent on * ?</Item>	 	
+		 <Item>my expense on * is ?</Item>
+		 <Item>my spendings on * was ?</Item>
+	 </Pattern>
+       <Response>
+        <easybudget:ExpenseByCategory>Run</easybudget:ExpenseByCategory>
+      </Response>
+	</Model>    
   </Concept>
 </Siml>
