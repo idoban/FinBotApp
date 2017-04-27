@@ -3,7 +3,6 @@
   <!--Entry point for creating your Syn Web Assistant-->
   <!--Note: You should NOT add any template to this Project. If you wish to use a base Template you should select the Template from you Syn Account.-->
   <Concept Name="Introduction">
-    
     <Model>
       <Pattern>
         <Item>HI</Item>
@@ -22,10 +21,9 @@
       <Pattern>WHAT IS MY NAME</Pattern>
       <Response>Your name is <User Get="NAME" /></Response>
     </Model>
-    
   </Concept>
+  
   <Concept Name="Balance" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
-    
     <Model>
       <Pattern>
             <Item>{WHAT IS MY BALANCE}</Item>
@@ -48,15 +46,13 @@
     
   </Concept>
   <Concept Name="CreditCardCharge" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
-    
     <Model>
       <Pattern>WHAT IS MY UPCOMING CREDIT CARD CHARGE</Pattern>
       <Response>Your upcoming credit card charge is <easybudget:CreditCardCharge></easybudget:CreditCardCharge></Response>
     </Model>
-    
   </Concept>
+
   <Concept Name="CreditCardChangeDate" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
-    
     <Model>
       <Pattern>
             <Item>{WHEN WILL CREDIT CARD BE CHARGED}</Item>
@@ -109,7 +105,6 @@
   </Concept>
   
   <Concept Name="PaymentsAmount" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
-    
     <Model>
       <Pattern>
         <Item>HOW MANY PAYMENTS DO I HAVE TO PAY FOR *</Item>
@@ -150,5 +145,19 @@
       </Response>
     </Model>
     
+  </Concept>
+  
+  <Concept Name="ExpenseByCategory" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+	<Model>
+	 <Pattern>
+	 	 <Item>How much on * ?</Item>
+	 	 <Item>How much did i spent on * ?</Item>	 	
+		 <Item>my expense on * is ?</Item>
+		 <Item>my spendings on * was ?</Item>
+	 </Pattern>
+       <Response>
+        <easybudget:ExpenseByCategory><Match /></easybudget:ExpenseByCategory>
+      </Response>
+	</Model>    
   </Concept>
 </Siml>
