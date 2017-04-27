@@ -3,6 +3,7 @@
   <!--Entry point for creating your Syn Web Assistant-->
   <!--Note: You should NOT add any template to this Project. If you wish to use a base Template you should select the Template from you Syn Account.-->
   <Concept Name="Introduction">
+    
     <Model>
       <Pattern>
         <Item>HI</Item>
@@ -21,9 +22,10 @@
       <Pattern>WHAT IS MY NAME</Pattern>
       <Response>Your name is <User Get="NAME" /></Response>
     </Model>
+    
   </Concept>
-  
   <Concept Name="Balance" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+    
     <Model>
       <Pattern>
             <Item>{WHAT IS MY BALANCE}</Item>
