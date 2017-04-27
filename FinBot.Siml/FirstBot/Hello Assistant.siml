@@ -15,7 +15,7 @@
     
     <Model>
       <Pattern>{MY NAME IS} *</Pattern>
-      <Response>Alright I will remember your name <User Set="NAME"><Match /></User></Response>
+      <Response>Hello <User Set="Name"><Match /></User>. It's nice to meet you. My name is <Bot Get="Name"></Bot> your personal finance ninja</Response>
     </Model>
     
     <Model>
@@ -27,8 +27,8 @@
   <Concept Name="Balance" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
     
     <Model>
-      <Pattern>WHAT IS MY TOTAL BALANCE</Pattern>
-      <Response>Your total balance is <easybudget:Balance></easybudget:Balance></Response>
+      <Pattern>WHAT IS MY BALANCE</Pattern>
+      <Response>Your balance is <easybudget:Balance></easybudget:Balance></Response>
     </Model>
     
   </Concept>
@@ -57,9 +57,9 @@
         <Item>HAVE I RECEIVED SALARY</Item>
       </Pattern>
       <Response><easybudget:Payslip></easybudget:Payslip></Response>
-    </Model>
-    
+    </Model>  
   </Concept>
+  
   <Concept Name="PaymentsAmount" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
     
     <Model>
@@ -70,6 +70,23 @@
     </Model>
     
   </Concept>
+
+  <Concept Name="CategoryBudget" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">    
+    <Model>
+      <Pattern>
+        <Item>BUDGET FOR * IS *</Item>
+      </Pattern>
+      <Response>I'll remember that.<easybudget:CategoryBudgetSetter><Match /><Text>---</Text><Match Index="2" /></easybudget:CategoryBudgetSetter></Response>
+    </Model>    
+    <Model>
+      <Pattern>
+        <Item>WHAT IS MY BUDGET FOR *</Item>
+      </Pattern>
+      <Response>Your budget on <Match /> is <easybudget:CategoryBudgetGetter><Match /></easybudget:CategoryBudgetGetter></Response>
+    </Model>   
+  </Concept>
+
+  
   <Concept Name="Goodbye">
     
     <Model>

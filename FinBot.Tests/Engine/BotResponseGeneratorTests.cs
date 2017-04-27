@@ -18,11 +18,11 @@ namespace FinBot.Tests.Engine
         }
 
         [Test]
-        public void GetBotResponse_UrlEncodedInput()
+        public void GetBotResponse_InputContainsInvalidCharacters_CorrectResponse()
         {
             var botResponseGenerator = InitializeBotResponseGenerator();
 
-            AssertResponse(botResponseGenerator, "\u202Bmy name is Chuck", "Alright I will remember your name Chuck");
+            AssertResponse(botResponseGenerator, "\u202Bhi", "Hello! What's your name?");
         }
 
         [Test]
@@ -31,7 +31,7 @@ namespace FinBot.Tests.Engine
             var botResponseGenerator = InitializeBotResponseGenerator();
 
             AssertResponse(botResponseGenerator, "Hi", "Hello! What's your name?");
-            AssertResponse(botResponseGenerator, "My name is Chuck", "Alright I will remember your name Chuck");
+            AssertResponse(botResponseGenerator, "My name is Chuck", "Hello Chuck. It's nice to meet you. My name is Fin your personal finance ninja");
             AssertResponse(botResponseGenerator, "What is my name?", "Your name is Chuck");
         }
 
@@ -64,6 +64,19 @@ namespace FinBot.Tests.Engine
         }
 
         [Test]
+        public void GetBotResponse_CategoryBudget_SetAndGet()
+        {
+            var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());
+
+            AssertResponse(botResponseGenerator,
+                "budget for shoes is 987",
+                "I'll remember that.");
+            AssertResponse(botResponseGenerator,
+                "what is my budget for shoes",
+                "Your budget on shoes is 987");
+        }
+
+        [Test]
         public void GetBotResponse_UpcomingCreditCardChangeDate()
         {
             var botResponseGenerator = InitializeBotResponseGenerator(
@@ -80,7 +93,7 @@ namespace FinBot.Tests.Engine
         {
             var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());
 
-            AssertResponse(botResponseGenerator, "What is my total balance", "Your total balance is 200");
+            AssertResponse(botResponseGenerator, "What is my balance", "Your balance is 200");
         }
 
         private static void AssertResponse(IBotResponseGenerator botResponseGenerator, string input, string response)

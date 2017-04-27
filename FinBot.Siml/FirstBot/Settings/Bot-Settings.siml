@@ -24,13 +24,13 @@
     <Variable Name="Version" Value="1.0" />
     <Variable Name="OS" Value="Windows" />
     <Variable Name="Arch" Value="Windows" />
-    <Variable Name="Name" Value="Maya" />
+    <Variable Name="Name" Value="Fin" />
     <Variable Name="Age" Value="18" />
     <Variable Name="BotMaster" Value="creator" />
     <Variable Name="Master" Value="Synthetic Intelligence Network" />
     <Variable Name="Author" Value="Synthetic Intelligence Network" />
     <Variable Name="Location" Value="Bangalore, India" />
-    <Variable Name="Gender" Value="Female" />
+    <Variable Name="Gender" Value="Male" />
     <Variable Name="Birthday" Value="1988/13/06" />
     <Variable Name="BirthPlace" Value="Bangalore, India" />
     <Variable Name="Website" Value="http://www.syn.co.in" />

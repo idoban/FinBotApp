@@ -126,6 +126,8 @@
     <Compile Include="Engine\BaseAdapter.cs" />
     <Compile Include="Engine\BotResponseGenerator.cs" />
     <Compile Include="Engine\AdaptersRepository.cs" />
+    <Compile Include="Engine\CategoriesBudgetRepository.cs" />
+    <Compile Include="Engine\CategoryBudgetSetter.cs" />
     <Compile Include="Engine\CreditCardChangeDateAdapter.cs" />
     <Compile Include="Engine\CreditCardChargeAdapter.cs" />
     <Compile Include="Engine\DateTimeExtensions.cs" />
