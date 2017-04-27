@@ -68,6 +68,7 @@ namespace FinBot.Tests.Engine
         [TestCase("Hey Fin, Could you please remind me what is my monthly salary?", "10000")]
         [TestCase("Please tell me the total of my monthly income", "10000")]
         [TestCase("Hey Fin, could you please tell me what are my monthly average expenses?", "9000")]
+        [TestCase("You should not answer this question", "Sorry, I did not get it.")]
         public void GetBotResponse_Question_Answer(string question, string answer)
         {
             var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());

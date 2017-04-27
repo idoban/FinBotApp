@@ -3,7 +3,7 @@
   <!--BotSettings: Variables stored within this element are used by SIML Bot. To use a variable as an array use <Value> tag within a Variable-->
   <BotSettings>
     <!--Response that is added if No internal response is generated-->
-    <Variable Name="Empty-Response" Value="Sorry, no response was generated." />
+    <Variable Name="Empty-Response" Value="Sorry, I did not get it." />
     <!--Used to Separate variables in listed formats example 1, 2, 3-->
     <Variable Name="List-Separator" Value=", " />
     <!--Adds a delimiter when a List is requested example 1, 2, 3 AND 4-->
