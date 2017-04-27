@@ -35,6 +35,18 @@
     </Model>
     
   </Concept>
+    <Concept Name="CreditBalance" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+    
+    <Model>
+      <Pattern>
+            <Item>{WHAT IS CREDIT BALANCE}</Item>
+            <Item>{WHAT CREDIT BALANCE IS}</Item>
+            <Item>{REMIND CREDIT BALANCE}</Item>
+       </Pattern>
+      <Response>It's <easybudget:CreditBalance></easybudget:CreditBalance></Response>
+    </Model>
+    
+  </Concept>
   <Concept Name="CreditCardCharge" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
     
     <Model>

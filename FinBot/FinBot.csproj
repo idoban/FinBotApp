@@ -128,6 +128,7 @@
     <Compile Include="Engine\AdaptersRepository.cs" />
     <Compile Include="Engine\CategoriesBudgetRepository.cs" />
     <Compile Include="Engine\CategoryBudgetSetter.cs" />
+    <Compile Include="Engine\CreditBalanceAdapter.cs" />
     <Compile Include="Engine\CreditCardChangeDateAdapter.cs" />
     <Compile Include="Engine\CreditCardChargeAdapter.cs" />
     <Compile Include="Engine\DateTimeExtensions.cs" />

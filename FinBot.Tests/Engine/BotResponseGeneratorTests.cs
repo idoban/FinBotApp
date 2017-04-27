@@ -101,6 +101,17 @@ namespace FinBot.Tests.Engine
         }
 
         [Test]
+        public void GetBotResponse_CreditCardBalance_LongQuestion()
+        {
+            var botResponseGenerator = InitializeBotResponseGenerator(
+                new MockFinancialServices());
+
+            AssertResponse(botResponseGenerator,
+                "Could you please remind me my credit balance.",
+                "It's 20000");
+        }
+
+        [Test]
         public void GetBotResponse_Balance()
         {
             var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());

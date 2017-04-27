@@ -8,6 +8,7 @@ namespace FinBot.Engine
         DateTime GetUpcomingCreditCardChargeDate();
         bool PayslipReceived();
         int GetRemainingPayments(string productName);
+        decimal GetCreditCardBalance();
     }
 
     public class FinancialServices : IFinancialServices
@@ -37,6 +38,11 @@ namespace FinBot.Engine
         public int GetRemainingPayments(string productName)
         {
             return _random.Next(1, 12);
+        }
+
+        public decimal GetCreditCardBalance()
+        {
+            return _random.Next(1, 10) * 1000;
         }
     }
 }

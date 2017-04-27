@@ -29,5 +29,10 @@ namespace FinBot.Tests.Engine
         {
             return 6;
         }
+
+        public decimal GetCreditCardBalance()
+        {
+            return 20000;
+        }
     }
 }
