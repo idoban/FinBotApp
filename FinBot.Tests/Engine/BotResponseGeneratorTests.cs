@@ -89,6 +89,18 @@ namespace FinBot.Tests.Engine
         }
 
         [Test]
+        public void GetBotResponse_UpcomingCreditCardChangeDate_LongQuestion()
+        {
+            var botResponseGenerator = InitializeBotResponseGenerator(
+                new MockFinancialServices(), 
+                new MockDateTimeProvider(new DateTime(2017, 6, 1)));
+
+            AssertResponse(botResponseGenerator,
+                "When is my next credit card billing?",
+                "Sure User, in 9 days days! HANG IN THERE!!!");
+        }
+
+        [Test]
         public void GetBotResponse_Balance()
         {
             var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());
