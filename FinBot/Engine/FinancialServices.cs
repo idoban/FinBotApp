@@ -9,6 +9,7 @@ namespace FinBot.Engine
         bool PayslipReceived();
         int GetRemainingPayments(string productName);
         decimal GetCreditCardBalance();
+        decimal GetAnnualSalary();
     }
 
     public class FinancialServices : IFinancialServices
@@ -43,6 +44,11 @@ namespace FinBot.Engine
         public decimal GetCreditCardBalance()
         {
             return _random.Next(1, 10) * 1000;
+        }
+
+        public decimal GetAnnualSalary()
+        {
+            return _random.Next(10, 20) * 10000;
         }
     }
 }

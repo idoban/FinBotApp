@@ -64,6 +64,15 @@ namespace FinBot.Tests.Engine
         }
 
         [Test]
+        [TestCase("What was my total annual salary this year?", "170000")]
+        public void GetBotResponse_Question_Answer(string question, string answer)
+        {
+            var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());
+
+            AssertResponse(botResponseGenerator, question, answer);
+        }
+
+        [Test]
         public void GetBotResponse_CategoryBudget_SetAndGet()
         {
             var botResponseGenerator = InitializeBotResponseGenerator(new MockFinancialServices());

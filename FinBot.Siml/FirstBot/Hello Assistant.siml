@@ -79,6 +79,15 @@
     </Model>  
   </Concept>
   
+   <Concept Name="AnnualSalary" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
+    <Model>
+      <Pattern>
+        <Item>{WHAT ANNUAL SALARY}</Item>
+      </Pattern>
+      <Response><easybudget:AnnualSalary><Match /></easybudget:AnnualSalary></Response>
+    </Model>
+  </Concept>
+  
   <Concept Name="PaymentsAmount" Type="Public" xmlns:easybudget="http://finbot.com/namespace#finbot">
     
     <Model>
