@@ -84,8 +84,9 @@
     <Model>
       <Pattern>
         <Item>HOW MANY PAYMENTS DO I HAVE TO PAY FOR *</Item>
+        <Item>{HOW MANY PAYMENTS ON *}</Item>
       </Pattern>
-      <Response>You have <easybudget:PaymentsAmount><Match /></easybudget:PaymentsAmount> remaining payments for <Match /></Response>
+      <Response><easybudget:PaymentsAmount><Match /></easybudget:PaymentsAmount>! Thank God!!!</Response>
     </Model>
     
   </Concept>

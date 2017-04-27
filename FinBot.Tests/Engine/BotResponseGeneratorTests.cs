@@ -60,7 +60,7 @@ namespace FinBot.Tests.Engine
 
             AssertResponse(botResponseGenerator,
                 "HOW MANY PAYMENTS DO I HAVE TO PAY FOR car",
-                "You have 6 remaining payments for car");
+                "6! Thank God!!!");
         }
 
         [Test]
@@ -109,6 +109,17 @@ namespace FinBot.Tests.Engine
             AssertResponse(botResponseGenerator,
                 "Could you please remind me my credit balance.",
                 "It's 20000");
+        }
+
+        [Test]
+        public void GetBotResponse_PaymentsAmount_LongQuestion()
+        {
+            var botResponseGenerator = InitializeBotResponseGenerator(
+                new MockFinancialServices());
+
+            AssertResponse(botResponseGenerator,
+                "How many loan payments i still have on my <something>?",
+                "6! Thank God!!!");
         }
 
         [Test]
